@@ -1,0 +1,196 @@
+.interface-doc {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+
+    .el-loading-mask {
+        position: fixed;
+        top: 50px;
+    }
+
+    .edition-info {
+        position: static;
+    }
+}
+
+.doc-main {
+    margin: 15px 15px 0;
+    border-radius: 5px;
+    border: 1px solid #E6EBEF;
+    background: #fff;
+}
+
+/* 右侧导航样式 */
+.doc-nav {
+    position: fixed;
+    top: 85px;
+    right: 35px;
+    width: 200px;
+    font-size: 12px;
+
+    .doc-filter {
+        padding: 10px;
+        border-radius: 3px;
+        background: #C6CBD2;
+
+        .el-select {
+            margin-bottom: 10px;
+            font-weight: bold;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .el-select-dropdown {
+            max-width: 180px;
+        }
+    }
+
+    .doc-menu {
+        margin-top: 20px;
+        background: #F9FAFC;
+        border-radius: 3px;
+        border: 1px solid #E5E9EE;
+
+        .doc-menu-wrap {
+            max-height: 360px;
+            padding: 10px;
+        }
+
+        ul {
+            overflow-x: hidden;
+        }
+
+        li {
+            cursor: pointer;
+            height: 36px;
+            line-height: 36px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            &:hover, &.active {
+                color: #fff;
+                background: $blue;
+            }
+
+            &.head1 {
+                font-weight: bold;
+                padding-left: $space-base;
+            }
+
+            &.head2 {
+                padding-left: $space-base * 2;
+            }
+
+            &.head3 {
+                padding-left: $space-base * 3;
+            }
+
+            &.head4 {
+                padding-left: $space-base * 4;
+            }
+
+            &.head5 {
+                padding-left: $space-base * 5;
+            }
+
+            &.head6 {
+                padding-left: $space-base * 6;
+            }
+        }
+    }
+}
+
+/* 左侧文档内容 */
+.doc-content {
+    padding: 40px 45px 75px;
+    position: relative;
+
+    & > div {
+        margin-right: 215px;
+
+        section, div, p {
+            margin-bottom: 1em;
+        }
+
+        .json-datas {
+            display: inline-block;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    }
+
+    .heading1 {
+        font-size: 16px;
+    }
+
+    p[class ^= "heading"] {
+        font-weight: bold;
+    }
+
+    a {
+        color: $blue;
+    }
+
+    pre {
+        white-space: pre-wrap;
+    }
+
+    table {
+        font-weight: bold;
+        border: solid #ccc;
+        border-width: 1px 0px 0px 1px;
+        background-color: #f5f5f5;
+
+        th {
+            background: #eee;
+            font-weight: bold;
+            text-align: left;
+            padding: 5px;
+        }
+
+        td {
+            border: solid #ccc;
+            border-width: 0px 1px 1px 0px;
+            padding: 5px;
+        }
+
+        pre {
+            margin-top: 1em;
+            font-weight: normal;
+        }
+
+        table {
+            margin: -6px;
+            width: calc(100% + 12px);
+        }
+
+        span + table {
+            margin-top: 5px;
+        }
+    }
+
+    & > button {
+        width: 100px;
+        height: 40px;
+        padding: 11px;
+        position: absolute;
+        top: 40px;
+        right: 260px;
+
+        &:hover, &:focus {
+            color: inherit;
+        }
+
+        .download-icon {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            margin-right: 6px;
+            vertical-align: top;
+            background: url("../assets/images/download-icon-gray.png") no-repeat center;
+        }
+    }
+}

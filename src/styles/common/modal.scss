@@ -1,0 +1,519 @@
+/*******  公共弹窗样式  ********/
+.el-form-item {
+  margin-bottom: 10px;
+}
+
+.in-input-row {
+  margin-bottom: 10px;
+
+  .el-upload__tip {
+    display: inline-block;
+    margin-left: 7px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 2px;
+  }
+
+  .el-checkbox__input {
+    &.is-checked {
+      .el-checkbox__inner {
+        background-color: $green;
+        border-color: $green;
+      }
+      & + .el-checkbox__label {
+        color: inherit;
+      }
+    }
+
+    &.is-disabled.is-checked {
+      .el-checkbox__inner {
+        background-color: #b4ecd0;
+        border-color: #b4ecd0;
+        &::after {
+          border-color: $white;
+        }
+      }
+    }
+  }
+
+  &.double-row-label {
+    .el-form-item__label {
+      line-height: 20px;
+    }
+  }
+}
+
+.el-dialog__wrapper {
+  .el-input {
+    width: 320px;
+    height: 40px;
+  }
+
+  .el-input input {
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  .el-pagination__editor {
+    &.el-input {
+      width: 50px;
+    }
+  }
+}
+
+.in-dialog {
+  .el-input__inner {
+    height: 40px;
+  }
+
+  .el-radio .el-date-editor {
+    width: 170px;
+    margin-left: -7em;
+    visibility: hidden;
+    &.is-visible {
+      visibility: visible;
+    }
+    .el-input__inner {
+      border: none;
+      padding-left: 7em;
+      padding-right: 0;
+      font-size: inherit;
+    }
+    span {
+      display: none;
+    }
+  }
+}
+
+.el-dialog--large {
+  width: 960px;
+  .el-dialog__body {
+    max-height: none;
+  }
+}
+
+.el-dialog__body {
+  .danger-icon {
+    color: $white;
+    border-radius: 50%;
+    background: $red;
+  }
+
+  .search-result .circular {
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+  }
+
+  p {
+    .modal-warning-icon {
+      margin: 3px 15px 0 60px;
+      vertical-align: top;
+    }
+
+    .error-tips {
+      display: inline-block;
+      width: 350px;
+      margin-bottom: 15px;
+      color: #fe5461;
+      font-size: 14px;
+      line-height: 2em;
+    }
+  }
+}
+
+.in-select-items {
+  border-radius: 4px;
+
+  li {
+    border: 1px solid $border-dark;
+    border-bottom-color: transparent;
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+    &.in-add-item {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  .move-icon {
+    margin-left: 15px;
+  }
+
+  .el-input {
+    width: calc(100% - 55px);
+  }
+
+  .el-input__inner {
+    border: 0;
+  }
+
+  .add-icon {
+    margin-left: 11px;
+    margin-right: 15px;
+  }
+}
+
+.in-item-setting {
+  width: 320px;
+
+  .el-radio-group {
+    width: 100%;
+  }
+
+  li {
+    width: 100%;
+    position: relative;
+
+    &.in-add-item {
+      cursor: pointer;
+      border-radius: 4px;
+      border: 1px dashed $border-dark;
+    }
+    &.sortable-chosen {
+      background: #F1F6FB;
+    }
+  }
+
+  .el-input {
+    background: #fff;
+  }
+
+  .in-select-items {
+    .delete-icon {
+      right: 15px;
+    }
+  }
+
+  .edit-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    width: 14px;
+    height: 14px;
+    margin-top: -7px;
+    background: url("../assets/images/edit-icon2.png") no-repeat center / cover;
+
+    &:hover {
+      background-image: url("../assets/images/edit-icon2-hover.png");
+    }
+  }
+
+  .delete-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    margin-top: -7px;
+    background: url("../assets/images/close-icon.png") no-repeat center;
+
+    &:hover {
+      background-image: url("../assets/images/close-icon-hover.png");
+    }
+  }
+}
+
+// 弹窗
+.modal-text-danger {
+  color: #fe5461;
+  font-size: 14px;
+
+  .danger-content {
+    position: relative;
+    display: block;
+    bottom: 3px;
+    line-height: 2em;
+    margin-left: 35px;
+  }
+}
+
+// 警告弹窗
+.danger-dialog .el-dialog__footer {
+  padding: 33px 30px 30px;
+}
+
+/* 复选、单选样式 */
+.in-check-items,
+.in-radio-items {
+  font-size: $font;
+  margin-top: 5px;
+
+  li {
+    line-height: $space-fourfold;
+    padding: 5px 0;
+
+    &.in-add-item {
+      margin-top: 5px;
+      margin-left: 55px;
+      padding: 0;
+      width: calc(100% - 60px);
+      text-align: center;
+    }
+  }
+
+  .move-icon {
+    float: left;
+    margin-top: 15px;
+  }
+
+  label {
+    margin: 0 15px;
+  }
+
+  .el-input {
+    width: calc(100% - 60px);
+  }
+
+  .el-checkbox__label,
+  .el-radio__label {
+    display: none;
+  }
+
+  .el-radio__inner {
+    border-color: $green;
+  }
+}
+
+/* 导入弹窗 */
+.upload-dialog {
+  .el-dialog__body {
+    padding: 0 25px;
+  }
+
+  p {
+    white-space: nowrap;
+  }
+
+  a {
+    color: $blue;
+    text-decoration: underline;
+  }
+
+  span.blue {
+    color: $blue;
+  }
+}
+
+/* 检索结果 */
+.el-dialog .search-result {
+  position: absolute;
+  z-index: 9;
+  top: 35px;
+  left: 0;
+  width: 442px;
+  max-height: 300px;
+  margin: 0 8px;
+  padding: 10px 0;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid $border-color;
+  box-shadow: 0px 3px 6px 0px rgba(53, 59, 66, 0.1);
+
+  li {
+    cursor: pointer;
+    padding: 0 13px;
+    line-height: 36px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &:hover {
+      background: #F5F7FA;
+    }
+  }
+
+  dt, dd {
+    cursor: pointer;
+    padding: 0 13px;
+    line-height: 36px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  dt {
+    color: #788795;
+  }
+
+  dd:hover {
+    background: #F5F7FA;
+  }
+
+  em {
+    color: $red;
+    font-style: normal;
+  }
+
+  p {
+    padding: 0 13px;
+  }
+}
+
+/* 两栏布局 */
+.dialog-panel {
+  float: left;
+  width: 220px;
+  height: 340px;
+  border-radius: 3px;
+  border: 1px solid $border-color;
+  background: #fff;
+
+  &:first-child {
+    margin-right: 20px;
+  }
+
+  .panel-head {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 8px;
+    border-bottom: 1px solid $border-color;
+    background: $gray-active;
+    position: relative;
+
+    .el-input {
+      width: 202px;
+
+      input {
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+
+    h6 {
+      padding: 0 8px;
+      font-weight: bold;
+    }
+  }
+
+  .panel-body {
+    height: calc(100% - 40px);
+    padding: 10px 8px;
+    overflow: auto;
+
+    li {
+      height: 34px;
+      line-height: 34px;
+      font-size: $font;
+      text-indent: 8px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      position: relative;
+
+      label {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .el-checkbox__original {
+          display: none;
+        }
+      }
+
+      .el-checkbox__label {
+        display: none;
+      }
+
+      .arrow-icon {
+        cursor: pointer;
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        margin-right: 4px;
+        vertical-align: 13px;
+        background: url("../assets/images/tree-expand-icon-arrow.png") no-repeat center;
+
+        &.expanded {
+          background-image: url("../assets/images/tree-expanded-icon-arrow.png");
+        }
+      }
+
+      .delete-icon {
+        cursor: pointer;
+        float: right;
+        position: relative;
+        width: 14px;
+        height: 14px;
+        margin-top: 10px;
+        background: url("../assets/images/close-icon.png") no-repeat center;
+      }
+    }
+  }
+
+  /* 检索结果面板 */
+  .search-result {
+    width: 202px;
+  }
+}
+
+/* 树组件 */
+.el-dialog__body {
+  .el-tree-node__content {
+    position: relative;
+
+    & > .el-checkbox {
+      margin-right: 0;
+      line-height: 34px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .custom-tree-node {
+      padding-right: 2em;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+/* 可拖拽弹窗内部样式覆盖 */
+.resizable-dialog {
+  position: relative;
+  left: auto;
+  margin: 0 auto;
+  min-width: 520px;
+  max-width: 99vw;
+  min-height: 560px;
+  max-height: 99vh;
+
+  .resizable-content {
+    position: absolute !important;
+    left: 0;
+    right: 0;
+    bottom: 90px;
+    top: 50px;
+  }
+
+  .el-loading-parent--relative {
+    position: initial !important;
+  }
+
+  .el-dialog__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .tip {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+  }
+}
+
+/* 注解文字 */
+.tip {
+  color: #A9ADB2;
+  font-size: 12px;
+  line-height: 12px;
+}

@@ -1,0 +1,47 @@
+ /* 组织管理样式 */
+ .group-manage {
+     .nav-more {
+         cursor: pointer;
+         width: 21px;
+         height: 21px;
+         border-radius: 50%;
+         background: url('../assets/images/more-icon.png') no-repeat center;
+         border: none;
+         &:hover {
+             display: block;
+             background-color: $blue;
+             background-image: url('../assets/images/more-icon-active.png');
+         }
+         &:active,
+         &.more-active {
+             display: block;
+             background-color: $blue;
+             background-image: url('../assets/images/more-icon-active.png');
+         }
+         &:focus {
+             outline: none;
+         }
+     }
+     .drop_btn {
+         position: relative;
+         padding: 0 10px;
+         i {
+             margin-left: 10px;
+         }
+     }
+     .only_me_group {
+         margin-left: 10px;
+         display: inline-block;
+         span {
+             margin-left: 10px;
+         }
+         .el-switch {
+            .el-switch_core {
+                border-color: none !important;
+             }
+         }
+     }
+ }
+
+ 
+ 

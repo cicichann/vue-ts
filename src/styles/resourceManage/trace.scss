@@ -1,0 +1,29 @@
+/* 使用轨迹 */
+
+.trace {
+  background: url(../assets/images/first-bg.png) no-repeat center / cover;
+}
+
+.trace-container {
+  position: relative;
+}
+
+.trace-title {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  max-width: 50%;
+  font-size: 22px;
+  line-height: 1.5;
+  background: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trace-map {
+  display: block;
+  background: $white;
+  box-shadow: 3px 3px 10px $border-dark;
+  border-radius: 5px;
+}

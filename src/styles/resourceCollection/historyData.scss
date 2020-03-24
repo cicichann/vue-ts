@@ -1,0 +1,378 @@
+/* 资源归集-历史数据迁移 */
+.history-data {
+
+    /* 任务列表 */
+    .task-list {
+        height: 100%;
+        overflow-y: auto;
+
+        li {
+            float: left;
+            width: 13.68%;
+            height: 160px;
+            padding: 13px;
+            margin: 0 0.3% 0.6% 0.3%;
+            border: 1px solid $border-color;
+            border-radius: 3px;
+
+            &.cursor {
+                cursor: pointer;
+            }
+
+            .el-progress-bar__outer {
+                border-radius: 3px;
+            }
+
+            .el-progress-bar__inner {
+                text-align: left;
+                font-weight: bold;
+                border-radius: 3px;
+            }
+
+            .el-progress.is-success .el-progress-bar__inner {
+                background: #D7F7E4;
+
+                .el-progress-bar__innerText {
+                    color: #4BD083;
+                }
+            }
+
+            .el-checkbox__label {
+                display: none;
+            }
+        }
+
+        h6 {
+            margin: .5em 0;
+            line-height: 1.5em;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        p {
+            margin: .5em 0;
+            font-size: $font-s;
+            line-height: 1em;
+
+            &.restart-badge {
+                i {
+                    display: inline-block;
+                    width: 15px;
+                    height: 15px;
+                    background: url("../assets/images/refresh.png") no-repeat center;
+                }
+                span {
+                    display: inline-block;
+                    margin-left: 5px;
+                    width: 24px;
+                    height: 16px;
+                    color: #fff;
+                    font-size: 12px;
+                    line-height: 16px;
+                    font-weight: bold;
+                    text-align: center;
+                    border-radius: 3px;
+                    vertical-align: top;
+                    background: #FE6772;
+                }
+            }
+
+            &.task-status {
+                line-height: 21px;
+                margin-bottom: 22px;
+
+                > span:first-child {
+                    margin-right: 15px;
+                }
+            }
+        }
+
+        .gray {
+            color: $gray;
+        }
+
+        span {
+            &.is-ongoing {
+                color: #017EFE;
+            }
+
+            &.is-completed {
+                color: #4BD083;
+            }
+        }
+
+        .status-icon {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            vertical-align: middle;
+            border-radius: 50%;
+            background-color: #C3C8CD;
+
+            &.is-ongoing {
+                background-color: #017EFE;
+            }
+
+            &.is-completed {
+                background-color: #4BD083;
+            }
+
+            &.is-failed {
+                background-color: #F34552;
+            }
+        }
+
+        .control-icon {
+            cursor: pointer;
+            float:right;
+            width: 21px;
+            height: 21px;
+            border-radius: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &.play-icon {
+                background-image: url("../assets/images/play-icon.png");
+            }
+
+            &.pause-icon {
+                background-image: url("../assets/images/pause-icon.png");
+            }
+        }
+
+        .task-progress {
+            height: 18px;
+        }
+    }
+
+    @media screen and (max-width: 1600px) {
+      .task-list li {
+        width: 19%;
+        margin: 0 0.5% 1% 0.5%;
+      }
+    }
+
+    /* 筛选 */
+    .filter-select {
+        .el-input__inner {
+            line-height: 28px;
+        }
+
+        .el-select-dropdown__item {
+            // width: 150px;
+
+            &.channel-loading {
+                cursor: none;
+                text-align: center;
+            }
+        }
+    }
+
+    /* 详情列表 */
+    .task-detail {
+        padding: 0 0 60px;
+        height: calc(100vh - 180px);
+
+        .status-icon {
+            display: inline-block;
+            width: 55px;
+            height: 26px;
+            padding: 0 9px;
+            line-height: 26px;
+            font-size: $font-s;
+            border-radius: 3px;
+            background: #fff no-repeat 85% center;
+            box-shadow: 0px 1px 4px 0px rgba(52,113,175,0.2);
+
+            &.succ-icon {
+                background-image: url("../assets/images/success-icon.png");
+            }
+
+            &.fail-icon {
+                background-image: url("../assets/images/fail-icon.png");
+            }
+        }
+
+        .com-table,
+        .el-table {
+            height: 100%;
+        }
+
+        .el-table__body-wrapper {
+            height: calc(100% - 40px);
+        }
+    }
+}
+
+/* 清除弹窗 */
+.delete-task {
+    .confirm-tips {
+        color: $red;
+        line-height: 30px;
+        margin-bottom: 15px;
+
+        span {
+            display: inline-block;
+            width: 320px;
+        }
+    }
+
+    .modal-warning-icon {
+        margin: 4px 20px 0 58px;
+    }
+}
+
+/* 新增、编辑弹窗 */
+.task-panel {
+    .panel-head {
+        h6 {
+            margin-right: 20px;
+
+            span {
+                cursor: pointer;
+                float: right;
+                color: #2a8bed;
+                font-weight: normal;
+                text-decoration: underline;
+            }
+        }
+
+        .icon {
+            cursor: pointer;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+
+        .add-icon {
+            position: absolute;
+            top: 10px;
+            right: 0;
+        }
+
+        .confirm-icon {
+            position: absolute;
+            bottom: -10px;
+            right: 28px;
+            background: url("~@/assets/images/confirm-icon.png") no-repeat center;
+        }
+
+        .cancel-icon {
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            background: url("~@/assets/images/cancel-icon.png") no-repeat center;
+        }
+
+        .popover {
+            margin: -1px;
+            position: absolute;
+            z-index: 2;
+            top: 40px;
+            left: 0;
+            right: 0;
+        }
+
+        textarea {
+            resize: none;
+            width: 100%;
+            height: 100px;
+            padding: 5px 16px;
+            font-size: 12px;
+            line-height: 20px;
+            border-radius: 4px;
+            border: 1px solid #e5e9ee;
+            background: #fff;
+            box-shadow: 0 3px 6px rgba(53, 59, 66, .1);
+        }
+    }
+
+    .panel-body {
+        li {
+            &.table-title {
+                font-weight: bold;
+                padding-left: 3px;
+            }
+
+            &.table-field-item {
+                padding-left: 20px;
+            }
+
+            &.site-item {
+                font-weight: bold;
+            }
+
+            &.channel-item {
+                padding-left: 18px;
+            }
+
+            .item-desc {
+                display: inline-block;
+                width: calc(100% - 60px);
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                &.mysql-desc {
+                  width: calc(100% - 25px);
+                }
+            }
+
+            .arrow-icon {
+                cursor: pointer;
+                display: inline-block;
+                width: 7px;
+                height: 7px;
+                margin-right: 4px;
+                vertical-align: 13px;
+                background: url("../assets/images/tree-expand-icon-arrow.png") no-repeat center;
+
+                &.expanded {
+                    background-image: url("../assets/images/tree-expanded-icon-arrow.png");
+                }
+            }
+        }
+    }
+}
+
+.task-dialog {
+
+    .el-button {
+        text-align: center;
+    }
+
+    .el-tree-node__content {
+        position: relative;
+    }
+
+    .el-tree {
+        .is-current {
+            background: #F1F6FB;
+        }
+    }
+
+    .site-icon {
+        display: inline-block;
+        width: 13px;
+        height: 11px;
+        background: url("../assets/images/site-icon.png") no-repeat center;
+    }
+
+    .site-title {
+        font-weight: bold;
+    }
+
+    .el-dialog__body {
+        overflow: visible;
+    }
+
+    .tip {
+        clear: both;
+        padding-top: 10px;
+
+        &.xml-tip {
+            margin-left: 2em;
+        }
+    }
+}

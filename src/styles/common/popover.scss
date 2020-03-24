@@ -1,0 +1,114 @@
+@import './variables';
+
+/*** popover样式公用 ***/
+
+.el-tooltip__popper,
+.el-popover {
+  line-height: 22px;
+  max-width: 90%;
+  padding: 8px 12px;
+}
+
+.uirb-dropdown-popover .el-select-dropdown__list {
+  padding: 0;
+
+  .el-select-dropdown__item.selected {
+    background: #F1F6FB;
+    color: $font-dark;
+  }
+}
+
+/* 导航更多按钮下拉 */
+.nav-more-popover {
+  width: auto;
+  min-width: inherit;
+  padding: 0;
+  overflow: hidden;
+
+  li {
+    height: 30px;
+    line-height: 30px;
+    min-width: 60px;
+    padding: 0 12px;
+    color: #363d4e;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  li:hover {
+    color: $white;
+    background: $blue-light;
+  }
+
+  &.sub-menu {
+    li {
+      text-align: left;
+    }
+  }
+}
+
+/* 失败数据popover */
+.data-prop.el-popper {
+  margin-top: 12px;
+  margin-left: -20px;
+  background: #303133;
+  color: #fff;
+  font-size: 12px;
+  .popper__arrow {
+    display: inline-block;
+    border-bottom-color: #303133;
+    border-top-color: #303133;
+  }
+}
+
+/* 弹窗中loading */
+.pop-loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: block !important;
+  text-align: center;
+}
+
+/* 入版本库数据信息popover */
+.version-detail.el-popper {
+  min-height: 40px;
+  max-width: 40%;
+
+  .popper__arrow {
+    left: 22px !important;
+  }
+
+  pre {
+    font-family: "Microsoft Yahei", "Arial", "PingFang SC", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  }
+
+  .pop-loading {
+    line-height: 40px;
+  }
+
+  .title-link {
+    color: $blue-light;
+    text-decoration: underline;
+  }
+}
+
+/* 表格更多操作按钮popover */
+.el-dropdown-menu.action-popover {
+  padding: 0;
+  overflow: hidden;
+
+  li {
+    line-height: 32px;
+    padding: 0 16px;
+
+    &:hover {
+      color: #fff;
+      background-color: #2a8bed;
+    }
+  }
+}

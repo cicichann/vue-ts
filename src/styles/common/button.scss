@@ -1,0 +1,303 @@
+@import './variables';
+/***** 公共按钮或icon样式 ******/
+
+/* 更多按钮 */
+.nav-more {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  background: url('../assets/images/more-icon.png') no-repeat center;
+  outline: 0;
+
+  &:hover {
+    border-color: $blue;
+    background-image: url('../assets/images/more-icon-hover.png');
+  }
+
+  &:active,
+  &.more-active {
+    border-color: $blue;
+    background-color: $blue;
+    background-image: url('../assets/images/more-icon-active.png');
+  }
+}
+
+/* 左侧导航按钮 */
+.action-btns {
+  display: flex;
+
+  button {
+    flex: 1;
+    height: 40px;
+
+    &.el-button--success {
+      border-color: $green;
+      background: $green;
+
+      &:hover {
+        border-color: $green-hover;
+        background: $green-hover;
+      }
+    }
+
+    &.el-button--primary {
+      border-color: $blue;
+      background: $blue;
+
+      &:hover {
+        border-color: $blue-btn-focus;
+        background: $blue-btn-focus;
+      }
+    }
+  }
+}
+
+/* 编辑按钮 */
+.edit-btn {
+  display: block;
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 10px;
+  padding: 0 20px;
+  border: 1px solid #e5e9ee;
+  border-radius: 3px;
+  outline: 0;
+  font-size: $font;
+  background-color: #ffffff;
+  color: $font-dark;
+  cursor: pointer;
+  &:disabled {
+    background: #fafafa;
+    border: 1px solid #eee;
+    color: #b9bfc5;
+    &:hover {
+      background: #fafafa;
+      cursor: no-drop;
+    }
+  }
+
+  &.back-btn {
+    color: #fff;
+    background-color: $green;
+  }
+}
+
+.edit-btn:not(:disabled):hover,
+.edit-btn.active:not(:disabled) {
+  color: #ffffff;
+  border-color: transparent;
+
+  /* 新建类 */
+  &.add-btn {
+    background-color: #61d080;
+  }
+  /* 删除类 */
+  &.delete-btn {
+    background-color: #fe6772;
+  }
+  /* 其他按钮 */
+  &.other-btn {
+    background-color: #4a8efd;
+  }
+  /* 返回按钮 */
+  &.back-btn {
+    background-color: $green-hover;
+  }
+}
+
+.edit-btn:not(:disabled):active {
+  /* 返回按钮 */
+  &.back-btn {
+    background-color: $green-focus;
+  }
+}
+
+/* 查看明文密码图标 */
+.pwd-input {
+  position: relative;
+
+  .pwd-view {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    cursor: pointer;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url('../assets/images/pwd-icon.png') no-repeat center;
+
+    &.pwd-view-icon {
+      background-image: url("../assets/images/pwd-icon-view.png");
+    }
+  }
+}
+
+/* 提示图标 */
+.tip-icon {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background:  url("../assets/images/tip-icon.png") no-repeat center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.warning-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url("~@/assets/images/warning-icon-small.png") no-repeat center;
+}
+
+.modal-warning-icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  vertical-align: -3px;
+  background: url("../assets/images/warning-icon.png") no-repeat center;
+}
+
+/* 输入框搜索图标 */
+.el-input .input-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  cursor: pointer;
+  background: url('../assets/images/search-icon.png') no-repeat center;
+}
+
+/* 拖拽图标 */
+.move-icon {
+  display: inline-block;
+  width: 6px;
+  height: 10px;
+  vertical-align: middle;
+  background: url("../assets/images/drag-icon.png") no-repeat center;
+  cursor: move;
+  &:hover {
+      background-image: url("../assets/images/drag-icon-active.png");
+  }
+}
+
+/* 导入图标 */
+.el-upload {
+  .upload-icon {
+      margin-right: 10px;
+      display: inline-block;
+      width: 18px;
+      height: 16px;
+      vertical-align: middle;
+      background: url("../assets/images/upload-icon.png") no-repeat center / cover;
+  }
+
+  .el-button {
+    padding: 11px 15px;
+
+    &:focus {
+      color: $font-dark;
+      background-color: #fff;
+    }
+
+    &:hover {
+        color: $blue;
+        background-color: #fff;
+        .upload-icon {
+            background-image: url("../assets/images/upload-icon-active.png");
+        }
+    }
+  }
+}
+
+.add-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-right: $space-base;
+  background: url("../assets/images/add-icon-small.png") no-repeat center;
+}
+
+.remove-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  background: url("../assets/images/close-icon.png") no-repeat center;
+
+  &:hover {
+    background: url("../assets/images/close-icon-hover.png") no-repeat center;
+  }
+}
+
+/* 分页按钮禁用样式 */
+.el-pagination button:disabled {
+  color: $font-light;
+  font-size: 12px;
+}
+
+/* 下拉按钮组样式 */
+.uirb-dropdown-btn {
+  position: relative;
+
+  .edit-btn {
+    padding: 0;
+    margin: 0;
+  }
+
+  .edit-btn.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  span {
+    margin-left: 15px;
+  }
+
+  i.is-reverse {
+    transform: rotate(180deg);
+  }
+
+  .uirb-dropdown-content {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    border: 1px solid #4a8efd;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    @include overflow;
+
+    ul li {
+      padding: 0 15px;
+      height: 30px;
+      line-height: 30px;
+      cursor: pointer;
+    }
+
+    li:hover {
+      background-color: #f5f9fb;
+    }
+
+    li.disable {
+      color: #b9bfc5;
+      background: #fafafa;
+      cursor: not-allowed;
+    }
+  }
+}
+
+/* 新增按钮 */
+.in-add-button {
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 3px;
+  border: 1px dashed #E6EBEF;
+}

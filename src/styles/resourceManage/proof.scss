@@ -1,0 +1,60 @@
+/* 智能处理-智能校对 */
+.doc-proof,
+.uirb-edit-history {
+  min-height: calc(100% - 30px);
+  padding: 10px 105px 40px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid $border-color;
+}
+
+.doc-proof {
+  /* 标题 */
+  .title-section h1 {
+    margin: 20px 0;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* 主体 */
+  .content-section {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid $border-color;
+
+    .proof-count {
+      font-size: $font-l;
+      font-weight: bold;
+      line-height: 22px;
+
+      span {
+        color: $red;
+      }
+
+      span.scroll-text {
+        cursor: pointer;
+      }
+    }
+
+    .proof-content {
+      margin: 15px 0;
+      color: $font-color;
+      line-height: 30px;
+
+      p {
+        text-indent: 2em;
+      }
+
+      .match-word {
+        color: $red;
+
+        em {
+          font-style: normal;
+          background: #ffff5c;
+        }
+      }
+    }
+  }
+}

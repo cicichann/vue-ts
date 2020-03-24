@@ -1,0 +1,84 @@
+/* 监控中心样式 */
+.monitor-center {
+  .nav-menu .el-tree {
+    margin-top: 10px;
+  }
+  
+  .sub-nav .el-select {
+    margin-right: 10px;
+  }
+  .sub-nav .el-select input {
+    width: 150px;
+  }
+
+  .com-table .el-table__body-wrapper {
+    height: calc(100vh - 200px - 50px);
+    // min-height: 320px;
+  }
+
+  /* 自动打标 */
+  .el-input-group__prepend {
+    padding: 0;
+
+    .el-select {
+      margin: 0;
+    }
+  }
+
+  .label-item {
+    display: inline-block;
+    max-width: 100%;
+    height: 30px;
+    line-height: 22px;
+    margin-top: 8px;
+    padding: 3px 10px;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    background-color: #f7fafd;
+    color: $blue;
+  }
+
+  /* 一键撤稿 */
+  .withdrawal-icon {
+    display: inline-block;
+    padding-left: 25px;
+    background: url('../assets/images/withdrawal-icon.png') no-repeat left;
+  }
+
+  /* 日志 */
+  .log-module .el-table__body-wrapper {
+    tr:not(.tr-detail) td {
+      cursor: pointer;
+    } 
+    tr td:last-of-type {
+      padding-right: 35px;
+    }
+    tr td:last-of-type .expand-text::after {
+      content: '[详细]';
+    }
+    .expand-tr td:last-of-type .expand-text::after {
+      content: '[收起]' !important;
+    }
+  }
+
+  .com-table .el-table .tr-detail td {
+    display: table-cell;
+    margin: 0;
+    padding: 0 !important;
+    border-color: transparent;
+    background-color: transparent !important;
+  }
+
+  .el-table .tr-detail pre {
+    max-height: 350px;
+    margin: 0 20px;
+    padding: 20px;
+    overflow: auto;
+    background-color: #e6f3ff;
+  }
+  .expand-text {
+    position: absolute;
+    right: 5px;
+    color: #2A8BED;
+  }
+}

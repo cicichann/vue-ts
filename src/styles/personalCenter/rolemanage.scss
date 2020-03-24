@@ -1,0 +1,118 @@
+/* 角色管理样式 */
+.role-manage {
+padding: 0 15px;
+
+.nav-more {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: url('../assets/images/more-icon.png') no-repeat center;
+    border: none;
+
+    &:hover,
+    &:active,
+    &.more-active {
+        display: block;
+        background-color: $blue;
+        background-image: url('../assets/images/more-icon-active.png');
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+}
+
+.distribute-group {
+    .panel-body {
+        .close-disable {
+          cursor: not-allowed !important;
+        }
+
+        li {
+            &.standard-title {
+                color: #A9ADB2;
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+// 新增角色弹窗中的权限模板的样式
+.add-auth-template {
+    .el-input {
+        width: 210px !important;
+    }
+}
+
+.scan-pz {
+    margin-left: 20px;
+    font-size: 14px;
+    color: #4a8efd;
+    cursor: pointer;
+}
+
+.authtemp-dialog {
+
+    .el-dialog__footer {
+        display: none;
+    }
+
+    .el-dialog__body {
+        max-height: 520px !important;
+        margin-bottom: 30px;
+    }
+
+    ul li .el-checkbox {
+        margin-right: 3px;
+    }
+
+    .first-auth>li {
+        margin-bottom: 40px;
+        &>span {
+            font-weight: bold;
+        }
+    }
+
+    .second-auth li {
+        margin-top: 20px;
+        padding-left: 20px;
+    }
+}
+
+@media screen and (min-width: 1401px) {
+    .role-manage .table-content {
+        height: calc(100vh - 180px);
+
+        .el-table__body-wrapper {
+            height: calc(100vh - 180px - 90px);
+            // min-height: 310px;
+        }
+    }
+}
+
+.auth-temp-option {
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.category-auth .panel-body {
+    .standard-title {
+        color: #A9ADB2;
+        font-size: 13px;
+    }
+}
+
+/* 分配弹窗 */
+.distribute-panel {
+    .name {
+        display: block;
+        padding-right: 2em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}

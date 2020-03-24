@@ -1,0 +1,251 @@
+/* 资源管理概览页面整体样式 */
+.resource-summary {
+    height: calc(100% - 50px);
+    padding: 0 20px 0 20px;
+    overflow: auto;
+    background: url('../assets/images/first-bg.png') no-repeat center / cover;
+    .summary-header {
+        min-width: 1230px;
+        height: 45px;
+        border-radius: 3px;
+        border: 1px solid $border-color;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    .summary-header .scroll-flip button {
+        height: 100%;
+        margin: 0;
+        border: 0;
+    }
+
+    .edition-info {
+        position: static;
+    }
+}
+
+.summary-tabs {
+    height: 45px;
+    white-space: nowrap;
+}
+
+/* 标准tab项 */
+.summary-item {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 17px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    &.is-active {
+        color: #fff;
+        background-color: $blue;
+    }
+    .right-line {
+        position: absolute;
+        right: 0;
+        top: 5px;
+        bottom: 5px;
+        display: inline-block;
+        width: 1px;
+        background: $border-color;
+    }
+}
+
+/* 概览页面顶部数据概览样式 */
+.summary-count {
+    margin: 20px 0;
+    min-width: 1230px;
+    ul li {
+        flex: 1;
+        height: 20vh;
+        min-height: 150px;
+        margin-right: 20px;
+        border-radius: 3px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    .count-num {
+        height: 36px;
+        line-height: 36px;
+        margin: 40px 0 10px 35px;
+        font-family: "HurmeGeometricSans3";
+        font-weight: bold;
+        font-size: 36px;
+        color: #fff;
+    }
+    .count-desc {
+        margin-left: 35px;
+        font-size: 16px;
+        color: #fff;
+    }
+    .all-counts {
+        background: url('../assets/images/all-counts.png') no-repeat center;
+        background-size: cover;
+    }
+    .today-counts {
+        background: url('../assets/images/today-counts.png') no-repeat center;
+        background-size: cover;
+    }
+    .resource-counts {
+        background: url('../assets/images/resource-counts.png') no-repeat center;
+        background-size: cover;
+    }
+    .change-counts {
+        background: url('../assets/images/change-counts.png') no-repeat center;
+        background-size: cover;
+    }
+}
+
+.summary-detail {
+    min-width: 1230px;
+    .flex-ul {
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+/* 数据走势图 */
+.detail-item {
+    flex: 1;
+    min-width: 49%;
+    height: 350px;
+    margin-bottom: 20px;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    background: #fff;
+    &:nth-child(2n-1) {
+        margin-right: 20px;
+    }
+    .counts-rank {
+        margin: 30px 26px 58px;
+        font-size: 20px;
+        font-weight: bold;
+        color: $font-color;
+    }
+    .rank-item {
+        margin-left: 30px;
+        margin-right: 52px;
+    }
+    .rank-num {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        margin-right: 10px;
+        vertical-align: top;
+        color: #bbb;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        text-align: center;
+    }
+    .top-three {
+        vertical-align: top;
+        color: #fff;
+        background-color: #3999e6;
+    }
+    .rank-title {
+        display: inline-block;
+        width: 80%;
+        height: 18px;
+        line-height: 18px;
+        font-size: 14px;
+        color: $font-color;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .rank-counts {
+        margin-bottom: 22px;
+        font-size: 16px;
+        line-height: 18px;
+        color: $font-color;
+    }
+    .no-rank-data {
+        font-size: 14px;
+        color: #909399;
+        height: 114px;
+        line-height: 114px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .resource-summary .summary-header {
+        .summary-item {
+            font-size: 16px;
+            &.is-active {
+                font-weight: bold;
+            }
+        }
+    }
+    .summary-count {
+        .count-num {
+            height: 30px;
+            line-height: 30px;
+            margin-top: 30px;
+            font-size: 30px;
+        }
+        .count-desc {
+            font-size: 14px;
+        }
+    }
+    .detail-item {
+        height: 285px;
+        .counts-rank {
+            margin-bottom: 50px !important;
+            font-size: 16px;
+        }
+        .rank-num {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            font-size: 12px;
+        }
+        .top-three {}
+        .rank-title {
+            font-size: 12px;
+        }
+        .rank-counts {
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+    }
+}
+
+.resource-manage {
+    background: #f3fcfe;
+    background-size: cover;
+    height: 100%;
+
+    .uirb-no-data-img {
+        position: relative;
+        height: calc(100vh - 80px);
+      
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -70px;
+          margin-top: -135px;
+        }
+        .no-data-tip {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -40px;
+        }
+      
+        .edition-info {
+          position: absolute;
+          bottom: -30px;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+/* 资源模型-资源结构 */
+.resource-structure {
+  .card-item .img-block {
+    background: url("../assets/images/resouce.png") no-repeat center !important;
+  }
+
+  .card-block-wrapper {
+    margin-bottom: 10px;
+  }
+
+  // 弹出框日期类型单选间距
+  .sub-row .el-radio + .el-radio {
+    margin-left: 25px;
+  }
+
+  .com-table .dis-draggable {
+    color: #363d4e;
+  }
+
+  .com-table .sys-default-row {
+    td {
+      color: $blue-cornflower;
+      border-color: #e1ecff;
+    }
+  }
+
+  /* 前置条件检索框 */
+  .front-condition-search {
+    overflow: hidden;
+    border-radius: 3px;
+    background: $white;
+    border: 1px solid $border-color;
+
+    .el-input__inner {
+      border: none;
+      height: 28px;
+      line-height: 28px;
+    }
+
+    .el-input-group__prepend {
+      border: 0;
+      color: $font-dark;
+      border-right: 1px solid $border-color;
+
+      input {
+        width: 130px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        background: $white;
+      }
+    }
+  }
+
+  /* 下拉筛选 */
+  .select-filter .active-select {
+    width: 150px;
+    margin-right: 10px;
+
+    input {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

@@ -1,0 +1,308 @@
+/* 应用授权 */
+.app-auth {
+
+    .content-container {
+        height: calc(100vh - 50px);
+    }
+
+    // 左侧导航
+    .nav-menu {
+        height: calc(100%);
+
+        > ul {
+            height: calc(100% - 100px);
+            overflow-y: auto;
+        }
+
+        .last-item .more-oprate {
+            top: -60px;
+
+            &.single-row {
+                top: -30px;
+            }
+        }
+    }
+
+    .more-oprate {
+        z-index: 9;
+    }
+
+    // 查看详情弹窗
+    .app-info-dialog .in-dialog {
+        margin-bottom: 25px;
+
+        p {
+            line-height: 36px;
+        }
+
+        span {
+
+            &:first-child {
+                display: inline-block;
+                width: 100px;
+                text-align: right;
+            }
+        }
+
+        input {
+             border: none;
+             padding: 0;
+             height: 36px;
+             color: $font-dark;
+        }
+    }
+
+    .main-content {
+        margin-top: 15px;
+        height: calc(100% - 45px);
+        border-radius: 3px;
+        background: #fff;
+        border: 1px solid $border-color;
+    }
+
+    .app-tab {
+        position: relative;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid $border-color;
+        background-color: $gray-hover;
+
+        h6 {
+            float: left;
+            margin: 0 20px;
+            font-size: $font-l;
+            font-weight: bold;
+        }
+
+        ul {
+            overflow: hidden;
+            margin: 0 20px;
+            padding-top: 5px;
+            height: 40px;
+            line-height: 34px;
+        }
+
+        li {
+            cursor: pointer;
+            float: left;
+            width: 120px;
+            text-align: center;
+            background: #fff;
+
+            &:hover {
+                color: $blue;
+                font-weight: bold;
+            }
+
+            &.active{
+                color: $blue;
+                font-weight: bold;
+                border: 1px solid $border-color;
+                border-bottom-color: #fff;
+            }
+        }
+    }
+
+    .app-auth-frame {
+        height: calc(100% - 40px);
+        padding: 20px 20px 30px;
+        &.uirb-no-data:after {
+          left: 55%;
+          top: 50%;
+        }
+
+        .clearfix {
+            height: calc(100% - 60px);
+        }
+
+        .app-auth-btns {
+            margin-top: 20px;
+            width: 620px;
+            text-align: center;
+        }
+    }
+
+    .auth-panel {
+        float: left;
+        width: 300px;
+        height: 100%;
+        margin-right: 20px;
+        border-radius: 3px;
+        border: 1px solid $border-color;
+        background: #fff;
+
+        .panel-body {
+
+            li, .custom-tree-node {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .custom-tree-node {
+                padding-right: 1.5em;
+            }
+        }
+    }
+
+    .panel-head {
+        height: 44px;
+        line-height: 42px;
+        padding: 0 8px;
+        border-bottom: 1px solid $border-color;
+        background: $gray-active;
+        position: relative;
+
+        h6 {
+            padding: 0 10px;
+            font-weight: bold;
+        }
+
+        span {
+            cursor: pointer;
+            float: right;
+            color: $blue;
+            font-weight: normal;
+            text-decoration: underline;
+        }
+
+    }
+
+    .panel-body {
+        height: calc(100% - 45px);
+        padding: 10px 20px;
+        overflow: auto;
+
+        li {
+            height: 34px;
+            line-height: 34px;
+            font-size: $font;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            position: relative;
+
+            &.standard-title {
+                color: #A9ADB2;
+                font-size: 13px;
+            }
+
+            .resource-name {
+                display: inline-block;
+                width: calc(100% - 20px);
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            label {
+                position: absolute;
+                right: 0;
+
+                .el-checkbox__original {
+                    display: none;
+                }
+            }
+
+            .el-checkbox__label {
+                display: none;
+            }
+
+            .delete-icon {
+                cursor: pointer;
+                float: right;
+                right: 20px;
+                top: 50%;
+                width: 14px;
+                height: 14px;
+                margin-top: 10px;
+                background: url("../assets/images/close-icon.png") no-repeat center;
+            }
+
+            .disabled-icon {
+                cursor: not-allowed;
+            }
+        }
+
+        .el-tree-node__content {
+            position: relative;
+        }
+
+        .el-tree .el-checkbox {
+            margin-right: 0;
+            line-height: 34px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .el-tree-node__label {
+            display: inline-block;
+            padding-right: 2em;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+    /* 检索结果面板 */
+    .search-result {
+        position: absolute;
+        z-index: 9;
+        top: 35px;
+        left: 0;
+        width: 278px;
+        max-height: 300px;
+        margin: 0 8px;
+        padding: 10px 0;
+        overflow-y: auto;
+        background: #fff;
+        border-radius: 3px;
+        border: 1px solid $border-color;
+        box-shadow:0px 3px 6px 0px rgba(53,59,66,0.1);
+
+        dt, dd {
+            cursor: pointer;
+            padding: 0 13px;
+            line-height: 36px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        dt {
+            color: #788795;
+        }
+
+        em {
+            color: $red;
+            font-style: normal;
+        }
+
+        p {
+            padding: 0 13px;
+        }
+
+        .circular {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .el-checkbox__input.is-disabled.is-checked .el-checkbox__inner {
+      background-color: #b4ecd0;
+      border-color: #b4ecd0;
+    }
+    .el-checkbox__input.is-disabled.is-checked .el-checkbox__inner::after {
+      border-color: #fff;
+    }
+
+    .view-icon {
+      display: block;
+      width: 12px;
+      height: 12px;
+      border: transparent !important;
+      background: url('../assets/images/view-detail-icon.png') no-repeat center !important;
+      background-size: contain;
+    }
+}

@@ -1,0 +1,100 @@
+/***  资源标准样式  ***/
+
+.resource-standard {
+    .nav-title {
+        position: relative;
+        padding-left: 28px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 14px;
+        font-weight: bold;
+        color: $font-dark;
+        cursor: default;
+    
+        span {
+            display: inline-block;
+            width: 130px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+
+    .nav-menu a {
+        i {
+          display: inline-block;
+          margin-right: 8px;
+          width: 15px;
+          height: 15px;
+          position: relative;
+          top: 0.1rem;
+          background-repeat: no-repeat;
+          background-position: center;
+  
+          &.standard-classify {
+              background-image: url('../assets/images/classify.png');
+          }
+  
+          &.standard-resource {
+              background-image: url('../assets/images/resource.png');
+          }
+  
+          &.standard-attr {
+              background-image: url('../assets/images/attribute.png');
+          }
+        }
+    }
+
+    .com-table .dis-draggable td {
+        color: $blue-cornflower;
+        border-color: #e1ecff;
+    }
+}
+
+/* 无资源标准时的初始化页面样式 */
+.no-standard {
+    height: calc(100vh - 50px);
+    background: url('../assets/images/first-bg.png') no-repeat center / cover;
+
+    .model-bg {
+        position: relative;
+        height: 60vh;
+        text-align: center;
+
+        img {
+            height: 75%;
+            vertical-align: middle;
+            position: relative;
+            top: 12.5%;
+            object-fit: contain;
+        }
+    }
+
+    .no-stand-title {
+        color: $font-color;
+        font-size: 24px;
+        line-height: 1em;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    .no-stand-btn {
+        margin: $space-fourfold 0;
+        text-align: center;
+
+        .el-button {
+            width: $space-base * 13;
+            height: $space-base * 5;
+
+            span {
+                color: #fff;
+                font-size: $font-xxl;
+            }
+        }
+
+        .el-button+.el-button {
+            margin-left: 55px;
+        }
+    }
+}

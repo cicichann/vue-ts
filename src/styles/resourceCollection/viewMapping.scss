@@ -1,0 +1,33 @@
+/**
+ * 数据映射管理样式
+ * created by huang.jusheng on 2019/1/23
+ */
+
+/* 数据映射关系图容器 */
+.data-map-wrapper .content-container {
+  //background: url("../assets/images/first-bg.png") no-repeat center top;
+  background-size: cover;
+}
+.data-map-wrapper .table-content {
+  padding: 0;
+  border: none;
+  text-align: justify;
+  overflow: auto;
+  background-color: transparent;
+  box-shadow: none;
+
+  &.not-spider {
+    height: calc(100vh - 95px);
+    margin-top: 15px;
+  }
+
+  .vue-waterfall-slot {
+    text-align: center;
+  }
+
+  .is-required::before {
+    content: '*';
+    margin-right: 4px;
+    color: #f56c6c;
+  }
+}

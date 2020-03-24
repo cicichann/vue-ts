@@ -1,0 +1,73 @@
+/* 权限模板样式 */
+.auth-template {
+  .module-title {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  /* 左侧模板列表 */
+  .nav-menu {
+    height: calc(100vh - 250px);
+  }
+
+  .template-right {
+    margin-left: 200px;
+  }
+
+  /* 右侧权限选项 */
+  .template-options {
+    margin: 15px 15px 25px 15px;
+    background-color: #ffffff;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .template-head {
+      padding-left: 10px;
+      background-color: $gray-hover;
+      border-bottom: 1px solid $border-color;
+    }
+
+    .template-head button {
+      float: right;
+      width: 60px;
+      line-height: 30px;
+      height: 30px;
+      margin: 5px 10px;
+      padding: 0;
+    }
+
+    .template-list {
+      height: calc(100vh - 135px);
+      // min-height: 425px;
+      padding-bottom: 20px;
+      overflow: auto;
+    }
+
+    .template-list li {
+      margin-top: 18px;
+      margin-right: 25px;
+    }
+
+    li .el-checkbox {
+      margin-right: 5px;
+    }
+
+    .first-auth,
+    .second-auth,
+    .third-auth {
+      padding-left: 25px;
+    }
+  }
+
+  .el-checkbox__input.is-disabled.is-checked .el-checkbox__inner {
+    background-color: #b4ecd0;
+    border-color: #b4ecd0;
+  }
+  .el-checkbox__input.is-disabled.is-checked .el-checkbox__inner::after {
+    border-color: #fff;
+  }
+}

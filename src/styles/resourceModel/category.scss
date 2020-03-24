@@ -1,0 +1,251 @@
+.resource-category,
+.resource-structure {
+  .table-content {
+    overflow: auto;
+    padding: 20px 15px;
+  }
+
+  .card-item {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    background: #F5F9FC;
+    border: 1px solid #E6EBEF;
+    border-radius: 3px;
+    z-index: 5;
+    cursor: pointer;
+
+    // 卡片头部
+    .card-head {
+      height: 34px;
+
+      label {
+        box-sizing: content-box;
+        width: 16px;
+        height: 16px;
+        padding: 13px;
+      }
+
+      .el-checkbox__label {
+        display: none;
+      }
+
+      .move-icon,
+      .card-id {
+        display: block;
+        position: absolute;
+        right: 16px;
+        top: 16px;
+      }
+
+      .move-icon {
+        display: none;
+      }
+
+      .card-id {
+        font-size: 12px;
+        color: #c5c8cc;
+      }
+    }
+
+    // 卡片主体
+    .card-body {
+      height: 100px;
+
+      .img-block {
+        width: 65px;
+        height: 65px;
+        margin: 0 auto 18px;
+      }
+
+      .block-desc {
+        text-align: center;
+        font-size: 16px;
+        color: #415569;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    // 卡片底部
+    .card-footer {
+      position: absolute;
+      bottom: 0px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 40px;
+      padding: 0 15px;
+      background: rgba(74, 142, 253, 0.8);
+      opacity: 0;
+
+      &.show {
+        opacity: 1;
+      }
+
+      .list-icon {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+
+    /* 操作图标 */
+    .edit-icon {
+      background: url("../assets/images/edit.png") no-repeat center;
+      &:hover {
+        background: #fff url("../assets/images/edit-hover.png") no-repeat center;
+      }
+    }
+
+    .attr-icon {
+      background: url("../assets/images/attr.png") no-repeat center;
+      &:hover {
+        background: #fff url("../assets/images/attr-hover.png") no-repeat center;
+      }
+    }
+
+    .delete-icon {
+      background: url("../assets/images/delete.png") no-repeat center;
+      &:hover {
+        background: #fff url("../assets/images/delete-hover.png") no-repeat center;
+      }
+    }
+
+    .copy-icon {
+      background: url('../assets/images/copy.png') no-repeat center;
+      &:hover {
+        background: #fff url('../assets/images/copy-hover.png') no-repeat center;
+      }
+    }
+
+    .split-icon {
+      background: url("../assets/images/split.png") no-repeat center;
+      &:hover {
+        background: #fff url('../assets/images/split-hover.png') no-repeat center;
+      }
+    }
+
+    .dupl-icon {
+      background: url('../assets/images/de-duplicate-icon.png') no-repeat center;
+      &:hover {
+        background: #fff url('../assets/images/de-duplicate-hover.png') no-repeat center;
+      }
+    }
+
+    .more-icon {
+      background: url('../assets/images/more-icon-active.png') no-repeat center;
+      &:focus {
+        background-color: transparent;
+      }
+      &:hover {
+        background: #fff url('../assets/images/more-icon-hover.png') no-repeat center;
+      }
+    }
+  }
+
+  .card-block-wrapper .card-item:hover,
+  .card-block-wrapper.sortable-chosen {
+    .move-icon {
+      display: block;
+    }
+
+    .card-id {
+      display: none;
+    }
+  }
+}
+
+/**** 资源目录样式 ***/
+.resource-category {
+  .card-item {
+    .img-block {
+      background: url("../assets/images/computerNo.png") no-repeat center / cover;
+    }
+    .category-footer {
+      justify-content: space-evenly !important;
+    }
+  }
+}
+
+/* 卡片容器布局 */
+.card-block-wrapper {
+  position: relative;
+  float: left;
+  height: 160px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 20px;
+  z-index: 25;
+  .move-box {
+    position: absolute;
+    left: -8px;
+    width: 5px;
+    height: 160px;
+    border: 1px solid $blue-light;
+  }
+  .have-level {
+    position: absolute;
+    top: -6px;
+    left: 12px;
+    width: 89%;
+    height: 160px;
+    border: 1px solid #E6EBEF;
+    background: #F5F9FC;
+    z-index: 2;
+  }
+  .have-level-bottom {
+    position: absolute;
+    top: -10px;
+    left: 29px;
+    width: 74%;
+    height: 160px;
+    border: 1px solid #E6EBEF;
+    background: #F5F9FC;
+    z-index: 1;
+  }
+}
+
+.add-item {
+  float: left;
+  height: 160px;
+  margin-right: 5px;
+  margin-left: 5px;
+  border: 1px solid rgb(230, 235, 239);
+  border-radius: 3px;
+  background: #F5F9FC;
+  cursor: pointer;
+
+  .add-layer {
+    position: relative;
+    width: 43px;
+    height: 43px;
+    margin: 46px auto 26px;
+    background: url(../assets/images/add-icon.png) no-repeat center;
+    p {
+      position: absolute;
+    }
+  }
+  .desc {
+    text-align: center;
+    font-size: 16px;
+    color: #363D4E;
+  }
+}
+
+.card-block-wrapper,
+.add-item {
+  width: 13.5%;
+}
+
+@media screen and (max-width: 1600px) {
+  .card-block-wrapper,
+  .add-item {
+    width: 19%;
+  }
+}

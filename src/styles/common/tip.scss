@@ -1,0 +1,36 @@
+@import './variables';
+
+.tip-modal {
+  height: 100px;
+  color: $white;
+  min-width: 150px;
+  width: 300px;
+  border-radius: 5px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: none;
+
+  p {
+    font-size: $font-l;
+  }
+}
+
+.tip-modal__success {
+  background: rgba($color: $green, $alpha: 0.7);
+  .tip-modal-icon {
+    background: url(../assets/images/success.png) no-repeat center;
+  }
+}
+
+.tip-modal__error {
+  background: rgba($color: $red, $alpha: 0.7);
+  .tip-modal-icon {
+    background: url(../assets/images/error.png) no-repeat center;
+  }
+}
+
+.tip-modal-icon {
+  height: 25px;
+  width: 25px;
+}

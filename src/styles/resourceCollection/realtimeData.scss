@@ -1,0 +1,141 @@
+//实时数据接入scss
+.resource-collection {
+  .no-standard {
+    display: none;
+
+    & + .content-container {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}
+
+.realtime-wrapper {
+  .card-wrap {
+    overflow: auto;
+    // min-height: 370px;
+    height: calc(100vh - 150px - 50px);
+    ul {
+      margin: 0;
+      li {
+        display: inline-block;
+        width: 13.4%;
+        height: 130px;
+        margin: 0 11px 11px 0;
+        padding-top: 35px;
+        border: 2px solid #edf0f3;
+        border-radius: 3px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+    .resource-name {
+      font-weight: bold;
+    }
+    .item-id {
+      margin-bottom: 10px;
+      font-size: 12px;
+      color: $disable-font;
+    }
+    .word-center {
+      padding: 0 25px;
+      text-align: right;
+      color: $gray;
+      .good-count {
+        float: left;
+        font-size: 12px;
+      }
+      .bad-count {
+        float: right;
+        font-size: 12px;
+      }
+      .count {
+        padding: 3px;
+        color: $font-dark;
+        font-weight: bold;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.list-wrapper {
+  .success-wrapper, .lose-wrapper {
+    display: inline-block;
+    width: 55px;
+    height: 26px;
+    line-height: 14px;
+    background:rgba(255,255,255,1);
+    border: 1px solid #E5E9EE;
+    box-shadow:0px 1px 4px 0px rgba(52,113,175,0.2);
+    border-radius:3px;
+    font-size: 12px;
+    padding: 5px 2px 5px 9px;
+  }
+}
+
+.list-wrapper.reltime-list {
+  .table-content {
+    // min-height: 495px;
+    .el-table__body-wrapper {
+      height: calc(100vh - 180px - 50px - 40px - 42px);
+      // min-height: 385px;
+    }
+  }
+}
+
+.success-icon {
+  display: inline-block;
+  width: 7px;
+  height: 5px;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  background: url('../assets/images/success-icon.png') no-repeat center;
+}
+.lose-icon {
+  display: inline-block;
+  width: 7px;
+  height: 5px;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  background: url('../assets/images/lose-icon.png') no-repeat center;
+}
+
+@media screen and (min-width: 1401px) {
+  .list-wrapper {
+    .table-content  {
+      height: calc(100vh - 90px - 50px - 36px);
+    }
+    .table-content .el-table__body-wrapper {
+      height: calc(100vh - 180px - 50px - 36px);
+    }
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  .list-wrapper {
+    .table-content  {
+      height: calc(100vh - 90px - 50px - 36px);
+    }
+    .table-content .el-table__body-wrapper {
+      height: calc(100vh - 180px - 50px - 36px);
+    }
+  }
+  .realtime-wrapper {
+    .card-wrap {
+      ul {
+        li {
+          width: 18.7%;
+          height: 130px;
+          padding-top: 30px;
+          .item-id {
+            margin-bottom: 12px;
+          }
+          .word-center {
+            padding: 0 15px;
+          }
+        }
+      }
+    }
+  }
+}

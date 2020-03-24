@@ -1,0 +1,351 @@
+/** 表格样式公用 **/
+
+/* 布局相关 */
+.com-table {
+  .el-table {
+    overflow: visible;
+    th {
+      padding: 0;
+      font-size: 12px;
+      background-color: #f5f9fc;
+      border: 0;
+    }
+    td {
+      padding: 0;
+    }
+    tr:hover td,
+    tr.high-light-row td {
+        background-color: #eff5f9 !important;
+    }
+  }
+
+  .dis-draggable,
+  .el-table__header-wrapper th {
+      color: #969ea6;
+      font-size: 14px;
+  }
+
+  td .cell {
+    line-height: 45px;
+    height: 45px;
+  }
+  th .cell {
+    line-height: 40px;
+    height: 40px;
+  }
+
+  .el-table__body-wrapper {
+    overflow-y: auto;
+    .el-table__body {
+      width: unset;
+    }
+  }
+
+  .el-table__header-wrapper {
+    border-bottom: 1px solid #ebeef5;
+    tr {
+      height: 40px;
+      background-color: #f5f9fc;
+    }
+  }
+
+  .el-table tr {
+    td:first-of-type,
+    td:last-of-type,
+    th:first-of-type,
+    th:nth-last-of-type(2)  {
+      width: calc(100% - 20px);
+      display: inline-block;
+    }
+    td:first-of-type,
+    th:first-of-type {
+      margin-left: 20px;
+    }
+    td:last-of-type,
+    th:nth-last-of-type(2)  {
+      margin-right: 20px;
+    }
+  }
+
+  td.edit-column .cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .el-table__empty-block {
+    border-bottom: 0;
+  }
+
+  .dragging {
+    cursor: move;
+    td {
+      display: table-cell !important;
+    }
+  }
+}
+
+.table-content .el-table::before {
+  background-color: transparent;
+}
+
+/* 头部拥有按钮和筛选下拉，底部有分页的表格布局 */
+.table-has-select-nav {
+  height: calc(100vh - 125px - 50px);
+  // min-height: 390px !important;
+
+  .el-table__body-wrapper {
+    height: calc(100vh - 160px - 125px) !important;
+    // min-height: 290px !important;
+  }
+}
+
+/* 头部拥有按钮，无筛选下拉，底部有分页的表格布局 */
+.table-has-pagination-no-select .el-table__body-wrapper {
+  height: calc(100vh - 250px) !important;
+  // min-height: 310px !important;
+}
+
+/* 公共操作图标 */
+.table-content {
+  .list-icon {
+    width: 21px;
+    height: 21px;
+    margin: 0 4px;
+    border-radius: 50%;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    background-color: transparent;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+    &:disabled:hover {
+      background-color: transparent !important;
+    }
+  }
+
+  // 编辑图标
+  .edit-icon {
+    background: url('../assets/images/edit-icon2.png') no-repeat center;
+  }
+  .edit-icon:hover,
+  .edit-icon:focus {
+    background: url('../assets/images/edit-icon.png') no-repeat center;
+    background-color: $blue-light;
+  }
+  .edit-icon:disabled {
+    background: url('../assets/images/edit-icon-forbide.png') no-repeat center;
+    background-size: 50%;
+  }
+
+  // 删除图标
+  .delete-icon {
+    background: url('../assets/images/delete-icon2.png') no-repeat center;
+  }
+  .delete-icon:hover,
+  .delete-icon:focus {
+    background: url('../assets/images/delete-icon.png') no-repeat center;
+    background-color: $red;
+  }
+  .delete-icon:disabled {
+    background: url('../assets/images/delete-icon-forbide.png') no-repeat center;
+    background-size: 50%;
+  }
+
+  /* 停用图标 */
+  .stop-icon {
+    background: url('../assets/images/stop-icon.png') no-repeat center;
+    &:hover {
+      background: url('../assets/images/stop-hover.png') no-repeat center;
+      background-color: $blue;
+    }
+  }
+
+  /* 启用图标 */
+  .star-icon {
+    background: url('../assets/images/star-icon.png') no-repeat center;
+    &:hover {
+      background-image: url('../assets/images/star-hover.png');
+      background-color: $blue;
+    }
+  }
+
+  // 撤稿图标
+  .undo-icon {
+    background: url('../assets/images/undo-icon2.png') no-repeat center;
+  }
+  .undo-icon:hover,
+  .undo-icon:focus {
+    background: url('../assets/images/undo-icon.png') no-repeat center;
+    background-color: #FB5664;
+  }
+
+  /* 更多图标 */
+  .more-icon {
+    background: url('../assets/images/more-icon.png') no-repeat center;
+  }
+  .more-icon:hover,
+  .more-icon:focus {
+    background: url('../assets/images/more-icon-active.png') no-repeat center;
+    background-color: $blue;
+  }
+
+  // 智能处理图标
+  .intelligent-icon {
+    background: url('../assets/images/AI-icon2.png') no-repeat center;
+  }
+  .intelligent-icon:hover,
+  .intelligent-icon:focus {
+    background: url('../assets/images/AI-icon.png') no-repeat center;
+    background-color: $blue;
+  }
+
+  .reduction-icon {
+    background: url('../assets/images/reduction-icon.png') no-repeat center;
+  }
+  .reduction-icon:hover,
+  .reduction-icon:focus {
+    background: url('../assets/images/reduction-hover.png') no-repeat center;
+    background-color: #62d59a;
+  }
+
+  .nav-more {
+    &:hover,
+    &:active,
+    &.more-active {
+      background-color: $blue;
+      background-image: url('../assets/images/more-icon-active.png');
+    }
+  }
+
+  .move-icon {
+    display: none;
+    background-position: left;
+  }
+
+  .el-table.move-tr .draggable:hover .move-icon {
+    display: inline-block;
+    width: 15px;
+    height: 45px;
+    position: absolute;
+    left: -45px;
+    top: 0;
+  }
+
+  .edit-col-left {
+    display: flex;
+    min-width: 55px;
+    text-align: left;
+  }
+
+  // 使用轨迹图标
+  .trail-icon {
+    background: url('../assets/images/manage-trail-icon2.png') no-repeat center;
+  }
+
+  .trail-icon:hover,
+  .trail-icon:focus {
+    background: url('../assets/images/manage-trail-icon.png') no-repeat center;
+    background-color: #f1b533;
+  }
+
+  /* 可点击字段 */
+  .title-link:hover {
+      color: $blue;
+  }
+
+  .version-icon {
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background: url('../assets/images/version-icon.png') no-repeat center;
+  }
+
+  .disable-title {
+      color: #969ea6;
+  }
+
+  /* 排序图标样式修改 */
+  .is-sortable .header-label {
+    float: left;
+    max-width: calc(100% - 24px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .descending .sort-caret.descending {
+    border-top-color: #585858;
+  }
+
+  .ascending .sort-caret.ascending {
+    border-bottom-color: #585858;
+  }
+
+  .table-select-head {
+    padding: 0;
+    margin: 0 -10px;
+
+    .el-input {
+      padding: 0;
+    }
+
+    input {
+      padding: 0 15px 0 8px;
+    }
+
+    .el-input__suffix {
+      right: 0;
+    }
+
+    .el-input.is-focus .el-input__inner,
+    .el-input__inner:focus,
+    &:hover .el-input__inner {
+      border-color: #39CB81;
+    }
+  }
+
+  .table-select-head.select-active {
+    input {
+      background-color: #39CB81;
+      border-color: #39CB81 !important;
+      color: #ffffff;
+    }
+
+    .el-select__caret{
+      color: #ffffff;
+    }
+  }
+}
+
+/* 本页/全部筛选下拉样式 */
+.table-select-dropdown {
+  margin-top: -6px !important;
+  padding: 0;
+  border: 1px solid #39CB81;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    padding: 0;
+  }
+
+  li div {
+    padding-left: 8px;
+  }
+
+  li.selected {
+    background-color: #F3F9FF !important;
+    color: #363D4E;
+  }
+}
