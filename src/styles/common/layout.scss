@@ -1,0 +1,354 @@
+@import './variables';
+
+/**** 全局布局样式 ****/
+
+.container-fluid {
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 1400px) {
+  .container-fluid {
+    min-width: 1340px;
+    // min-height: 570px;
+    font-size: $font;
+  }
+}
+
+/* 头部导航布局 */
+.header-nav {
+  padding: 0 15px;
+  background: $blue-header url('../assets/images/header.png') no-repeat center top / cover;
+  box-shadow: 0 1px 10px rgba(39, 99, 209, .5);
+
+  a > img {
+    height: 30px;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  .module-dropdown {
+    width: 95px;
+    margin-top: 12px;
+    margin-left: 20px;
+    line-height: 26px;
+
+    input {
+      height: 26px;
+      line-height: 24px;
+      display: block;
+      padding-left: 10px;
+      padding-right: 0px;
+      border: 1px solid transparent !important;
+      border-radius: 3px;
+      background: #4b75d5;
+      font-size: 13px;
+      color: #b8cdfb;
+    }
+
+    .is-focus input {
+      background-color: #fff;
+      color: $blue;
+    }
+  }
+
+  .system-module {
+    height: 45px;
+    margin-top: 5px;
+    margin-left: 20px;
+    color: #b8cdfb;
+  }
+
+  .nav-bar {
+    margin-left: 120px;
+  }
+
+  .nav-item {
+    position: relative;
+    display: block;
+    padding: 0 26px;
+    font-size: $font-l;
+    color: #ffffff;
+  }
+
+  .nav-item.router-link-active {
+    background: #2458b8;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: #fff;
+    }
+  }
+
+  .recycle-icon {
+    display: block;
+    width: 14px;
+    height: 100%;
+    margin-right: 20px;
+    background: url('../assets/images/recycle-icon.png') no-repeat center;
+    cursor: pointer;
+  }
+
+  .user-dropdown {
+    position: relative;
+    color: #ffffff;
+    cursor: pointer;
+
+    ul {
+      right: 0;
+      width: 90px;
+      color: $font-dark;
+    }
+
+    i {
+      transition: all .3s;
+    }
+
+    .is-reverse {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+/* 左侧容器布局 */
+.side-bar {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  width: $aside-width;
+  background: #fff;
+  box-shadow: 1px 0 10px rgba(170, 185, 181, .5);
+  // min-height: 480px;
+  z-index: 3;
+
+  .title {
+    padding-top: 5px;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-indent: 20px;
+    color: #363d4e;
+  }
+
+  .search-input {
+    padding: 0 10px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    .input-icon {
+      margin-right: 8px;
+    }
+  }
+
+
+  .search-result .uirb-dropdown {
+    width: 225px;
+    top: 35px;
+    margin: 0 10px;
+    border: 1px solid #e5e9ee;
+
+    .search-no-data {
+      height: 60px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    li {
+      height: 36px;
+      line-height: 36px;
+      text-align: left;
+      padding-left: 15px;
+      padding-right: 5px;
+    }
+
+    .red-word {
+      color: $red;
+    }
+  }
+
+  .app-name {
+    padding: 0 10px;
+    color: #969EA6;
+    line-height: 40px;
+    font-weight: bold;
+
+    & + .in-tree {
+      height: calc(100% - 145px);
+    }
+  }
+
+  .action-btns {
+    position: absolute;
+    bottom: $space-tripple;
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+  }
+}
+
+/* 左侧导航布局 */
+.nav-menu {
+  height: calc(100% - 100px);
+  // min-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  li:hover .nav-more {
+    display: block;
+  }
+
+  .nav-item {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+
+    a,
+    .nav-item-content {
+      display: inline-block;
+      width: 160px;
+      height: 40px;
+      padding-left: 30px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: $font-dark;
+    }
+
+    &:hover {
+      background-color: $gray-active;
+    }
+  }
+
+  .nav-item.is-active {
+    background-color: $gray-active;
+
+    a {
+      font-weight: bold;
+      color: #2a8bed;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background-color: $green-light;
+    }
+  }
+
+  /* 更多按钮 */
+  .nav-more {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+
+    &:active, &.more-active {
+      display: block;
+    }
+  }
+
+  .appName {
+    margin-left: 20px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.nav-menu-has-botton {
+  height: calc(100% - 150px);
+}
+
+/* 右侧布局 */
+.content-container {
+  overflow: hidden;
+  margin-left: $aside-width;
+  padding: 0 15px;
+  width: calc(100% - 200px);
+
+  .edition-info {
+    margin: 0 15px;
+    width: calc(100% - 230px);
+  }
+}
+
+/* 头部按钮群容器 */
+.sub-nav {
+  margin: 15px 0;
+  @include clearfix ();
+
+  .el-breadcrumb {
+    margin-right: 20px;
+  }
+  .el-input {
+    width: auto;
+  }
+  .el-input input {
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    font-size: 14px;
+    border-color: $border-color;
+    &:hover,
+    &:focus {
+      border-color: $blue-btn;
+    }
+  }
+  .uirb-dropdown-btn {
+    float: left;
+    margin-right: 10px;
+  }
+}
+
+/* 头部筛选下拉容器 */
+.sub-filter {
+  margin-top: -5px;
+  margin-bottom: 10px;
+  @include clearfix ();
+  input {
+    height: 30px;
+  }
+  .select-item {
+    width: 150px;
+    float: left;
+  }
+  .select-item + .select-item {
+    margin-left: 10px;
+  }
+  .el-select input {
+    height: 30px;
+    line-height: 28px;
+    border-color: $border-color;
+    color: #363D4E;
+    font-size: 14px;
+  }
+}
+
+/** 主体布局 **/
+.table-content {
+  position: relative;
+  // min-height: 430px;
+  padding: 25px 20px;
+  border-radius: 3px;
+  border: 1px solid $border-color;
+  background: #fff;
+}

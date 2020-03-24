@@ -1,0 +1,134 @@
+// 首页样式
+.home-container {
+    height: 100%;
+    .manage-txt {
+        right: 21px !important;
+    }
+    .manage-desc {
+        bottom: 78px !important;
+    }
+    .title {
+        padding: 20px 0;
+        text-align: center;
+    }
+    .main-container {
+        position: relative;
+        height: calc(100% - 50px);
+        background: url("../assets/images/first-bg.png") no-repeat center;
+        background-size: cover;
+    }
+    .module-entry {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(100% - #{$space-fourfold});
+        min-height: 500px;
+        .module-item {
+            position: relative;
+            width: 214px;
+            height: 354px;
+            margin-right: 82px;
+            background: url("../assets/images/blankSquer.png") no-repeat center;
+
+            .disable {
+                cursor: not-allowed;
+            }
+
+            &.red-img {
+                background-image: url("../assets/images/redSquer.png");
+                margin-right: 0;
+                .module-item-desc {
+                    width: 92px;
+                }
+                .module-item-text {
+                    right: 32px;
+                }
+            }
+
+            &.blue-img {
+                background-image: url("../assets/images/blueSquer.png");
+                .module-item-desc {
+                    width: 115px;
+                }
+                .module-item-text {
+                    right: 41px;
+                }
+            }
+
+            &.purple-img {
+                background-image: url("../assets/images/purpleSquare.png");
+                .module-item-text {
+                    right: 34px;
+                }
+            }
+        }
+
+        .module-item-desc {
+            position: absolute;
+            top: 250px;
+            left: 43px;
+            width: 96px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .module-item-text {
+            position: absolute;
+            top: 66px;
+            right: 33px;
+            width: 2.1em;
+            font-size: 20px;
+            font-weight: bold;
+            color: $font-dark;
+        }
+        .wait-time {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: $font-dark;
+        }
+        a {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .module-entry .sysconf-module {
+        position: relative;
+
+        .edit-btn {
+        position: absolute;
+        left: 50%;
+        margin-left: -50px;
+        margin-top: 30px;
+        color: #ffffff;
+        border-color: transparent;
+        background-color: #4a8efd;
+        }
+    }
+}
+
+.home-text {
+    line-height: 46px;
+    font-size: 30px;
+}
+
+/* 版本信息 */
+.edition-info {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: $gray;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  .tag {
+    margin:0 5px;
+  }
+}
+

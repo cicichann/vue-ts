@@ -1,0 +1,181 @@
+@import './variables';
+@import './element-ui';
+@import './mixin';
+@import './reset';
+@import '../styles/resourceModel/home';
+
+@import '../styles/common/popover';
+@import '../styles/common/table';
+@import '../styles/common/layout';
+@import '../styles/common/button';
+@import '../styles/common/tree';
+@import '../styles/common/standard';
+@import '../styles/common/modal';
+@import '../styles/common/tip';
+//***********************************************************************//
+//                         全局公共样式                                   //
+//*********************************************************************//
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/* 清除浮动 */
+.clearfix::after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    font-size: 0;
+    visibility: hidden;
+}
+
+/* 文字溢出 */
+.overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 隐藏元素 */
+.in-hidden {
+    display: none;
+}
+
+/* 全局样式 */
+body {
+    color: $font-dark;
+    font-size: $font;
+    background: $gray-bg;
+}
+
+/** 公共下拉样式 **/
+ul.uirb-dropdown {
+    position: absolute;
+    // width: 100%;
+    border-radius: 3px;
+    background: #ffffff;
+    box-shadow: 0 3px 6px rgba(53,59,66,.1);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 2001;
+
+    li {
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    li:hover,
+    li.active {
+        background-color: $gray-active;
+    }
+}
+
+/* 导航更多按钮下拉 */
+ul.nav-more-dropdown {
+    position: absolute;
+    right: 10px;
+
+    li {
+      height: 30px;
+      line-height: 30px;
+      min-width: 60px;
+      padding: 0 12px;
+      color: #363d4e;
+      font-size: 12px;
+      font-weight: normal;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    li:hover {
+      color: $white;
+      background: $blue-light;
+    }
+}
+
+.el-table,
+.el-breadcrumb .el-breadcrumb__item a,
+.list-pagination span {
+    color: $font-dark;
+}
+
+/* 面包屑相关 */
+.el-breadcrumb .sign {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+    margin-top: 8px;
+    background: url('../assets/images/sign-icon.png') no-repeat center;
+}
+.el-breadcrumb__item:not(:last-child) .el-breadcrumb__inner {
+    float: left;
+    max-width: 60px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.el-breadcrumb__item:last-child .el-breadcrumb__inner {
+    color: $gray;
+}
+
+/* switch开关相关 */
+.el-switch__label.is-active {
+    color: #000;
+}
+.fl .el-switch {
+    margin-left: 15px;
+}
+
+/* 暂无数据 */
+.uirb-no-data {
+    position: relative;
+    height: 100%;
+    background-size: auto 50%;
+
+    &:after {
+        visibility: visible;
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        margin-left: -50px;
+        content: '暂无数据';
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+/* 带Img的暂无数据 */
+.uirb-no-data-img:before {
+    content: ' ';
+    display: block;
+    width: 140px;
+    height: 130px;
+    margin: 0 auto;
+    background: url("../assets/images/no-data-img.png") no-repeat center;
+    background-size: contain;
+}
+
+/* 下拉宽度 */
+.dropdown-select-150 {
+    width: 150px;
+}
+
+/* 鼠标无法选中属性 */
+.no-selected {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}

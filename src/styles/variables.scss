@@ -1,0 +1,60 @@
+//***********************************************************************//
+//                         全局CSS变量                                    //
+//*********************************************************************//
+// 主题色
+// ---------------------------------------
+$white: #fff;
+$blue: #2a8bed;
+$blue-light: #478dff;
+$blue-header: #2763d1;
+$blue-cornflower: #76aaff;
+$blue-btn: #4a8efd;
+$blue-hover: #3e84f5;
+$blue-focus: #3681fd;
+$blue-btn-hover: #3681FD;
+$blue-btn-focus: #2D76EC;
+$font-color: #415569;
+$font-light: #b9bfc5;
+$font-dark: #363d4e;
+$font-dialog: #595959;
+$border-color: #e5e9ee;
+$border-light: #edf0f3;
+$border-dark: #ddd;
+$border-diable: #E5E9EE;
+$gray-bg: #eff5f9;
+$gray-btn: #fafafa;
+$gray-hover: #f5f9fb;
+$gray-active: #f0f5fa;
+$gray: #969ea6;
+$disable-btn: #eeeeee;
+$red: #fe6772;
+$red-hover: #f04753;
+$red-hover2: #e75e6a;
+$btn-red: #FE6772;
+$btn-red-hover: #F95561;
+$btn-red-foucs: #F34552;
+$green: #39cb81;
+$green-light: #38caa3;
+$green-hover: #22B96D;
+$green-focus: #15B061;
+$cyan: #1bc7db;
+$disable-font: #C5C8CC;
+$default-hover: #F3F9FF;
+$default-focus: #E6F2FF;
+// 文字大小，默认颜色
+// ---------------------------------------
+$font: 14px;
+$font-s: 12px;
+$font-l: 16px;
+$font-xl: 18px;
+$font-xxl: 20px;
+// 边框圆角，默认颜色
+// ---------------------------------------
+// 布局变量
+// ---------------------------------------
+$aside-width: 200px;
+$space-base: 10px;
+$space-content: 150px;
+$space-double: $space-base * 2;
+$space-tripple: $space-base * 3;
+$space-fourfold: $space-base * 4;

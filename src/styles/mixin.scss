@@ -1,0 +1,92 @@
+//***********************************************************************//
+//                         公用Mixin样式                                 //
+//*********************************************************************//
+
+/* 文字溢出 */
+@mixin overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// PS投影到CSS阴影的映射
+
+
+//头部高度采用变量
+@mixin  headerHeight ($header-height) {
+    /* 公用头部 */
+    .header-nav {
+        height: $header-height;
+        line-height: $header-height;
+    }
+
+    /* 头部导航 */
+    .nav-items {
+        a {
+            height: $header-height;
+        }
+    }
+
+    /* 公用内容区域容器 */
+    // .main-container {
+        // height: calc(100vh - #{$header-height});
+    // }
+
+    .resource-inforepo {
+        .card-wrap {
+            height: calc(100vh - 150px - #{$header-height});
+        }
+    }
+
+    /* 资源模型表格 */
+    .table-content,
+    /* 资源结构样式 */
+    .catalog-container,
+    /* 数据分类样式 */
+    .classify-content {
+      height: calc(100vh - 90px - #{$header-height});
+    }
+
+    /* 资源模型表格公共样式重置 */
+    .table-content .el-table__body-wrapper {
+        height: calc(100vh - 160px - #{$header-height});
+    }
+
+    /* 预览 */
+    .uirb-preview {
+        /* 头部 */
+        .header-nav {
+            height: #{$header-height};
+            line-height: #{$header-height};
+        }
+        /* 内容区域 */
+        .main-container {
+            height: calc(100vh - #{$header-height});
+        }
+    }
+
+    /* 使用轨迹 */
+    .trace-map {
+        min-height: calc(100vh - 50px - #{$header-height});
+    }
+
+}
+
+@mixin  clearfix () {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    @include headerHeight($header-height: 50px);
+}
+
+@media screen and (min-width: 1401px) {
+    @include headerHeight($header-height: 50px);
+}

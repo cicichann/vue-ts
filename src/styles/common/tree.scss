@@ -1,0 +1,44 @@
+/**** 公共树相关样式 ****/
+
+/** 左侧导航树 **/
+.side-bar .el-tree {
+  .el-tree-node__content {
+    position: relative;
+  }
+
+  // 选中的树节点
+  .is-current > .el-tree-node__content {
+    font-weight: bold;
+    color: $blue;
+    background: $gray-active;
+
+    &:after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+      width: 4px;
+      height: 100%;
+      background: #4bd083;
+    }
+  }
+
+  .el-tree-node__expand-icon {
+    // 未展开
+    &:before {
+      background-image: url("../assets/images/tree-expand-icon.png");
+    }
+  
+    // 展开
+    &.expanded:before {
+      background-image: url("../assets/images/tree-expand-icon_expanded.png");
+    }
+  
+    // 叶子节点
+    &.is-leaf:before {
+      width: 10px;
+      height: 5px;
+      background-image: url("../assets/images/tree-is-leaf.png");
+    }
+  }
+}
